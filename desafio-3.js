@@ -4,11 +4,20 @@
 //Math.Floor()
 //caso pontos seja maior que 12 -> "Carteira Suspendida"
 
-verificarVelocidade(50);
+verificarVelocidade(131);
 
 function verificarVelocidade(velocidade) {
-    if (velocidade <= 70)
+    const velocidadeMaxima = 70;
+    const kmPorPonto = 5;
+
+    if (velocidade <= velocidadeMaxima){
         console.log('Ok');
-    if (velocidade > 70)
-        
+    } else {
+        const pontos = Math.floor(((velocidade - velocidadeMaxima) / kmPorPonto));
+        if (pontos > 12){
+            console.log('Carteira Suspensa');
+        } else {
+            console.log('Voce foi multado, recebeu', pontos, 'pontos.')
+        }
+    }
 }
